@@ -1,0 +1,232 @@
+---
+title: Examples of IIIF to Explore
+path: /examples-of-iiif-to-explore
+menuLabel: Examples of IIIF to Explore
+inMenu: false
+---
+
+import { Rijksmuseum } from "./components/Rijksmuseum";
+import { NasaProxy } from "./components/NasaProxy";
+import { TheseusLogo, TheseusLink } from "./components/TheseusLogo";
+import { TheseusEmbed } from "./components/TheseusEmbed";
+
+# IIIF content to Explore
+
+Given our location for the workshop today, where better to start than at TU Delft - you can navigate their IIIF collection from here: (https://heritage.tudelft.nl/iiif/collection.json )
+
+Using Theseus from the viewer tools, you can navigate through IIIF collections - simply open [Theseus](https://theseusviewer.org/) and paste in the Collection URL.
+
+```
+https://theseusviewer.org/?iiif-content={URL}
+```
+
+Next to some of the examples there will be links to open and preview IIIF in Theseus.
+
+<TheseusEmbed iiif-content="https://heritage.tudelft.nl/iiif//collection.json" />
+
+<TheseusLink href="https://heritage.tudelft.nl/iiif/collection.json" />
+
+You can grab the IIIF Manifest URL from the sidebar.
+
+<img
+  src="/theseus-link-image.jpg"
+  className="w-1/2"
+  alt="The link to open the Manifest in Theseus"
+/>
+
+Inside of the Manifest Editor you can also use the IIIF Browser to navigate through Manifests and Collections.
+
+![](https://digirati-workshops.pages.dev/browser.jpg)
+
+From the Browser you can click on the URL at the top to go to a custom Collection or Manifest URL.
+
+![](https://digirati-workshops.pages.dev/browser-2.jpg)
+
+## Existing IIIF Collections
+
+You can use the IIIF Browser to add images from existing IIIF collections and Manifests.
+
+### Rijksmuseum
+
+The Rijksmuseum has a collection of artworks and artifacts that can be explored. A proxy is
+available that allows you to grab IIIF Manifests from the resources. If you paste a URL for
+one of these pages in the box below, a IIIF Manifest URL will be generated.
+
+<Rijksmuseum />
+
+:::info
+The proxy is available here: https://www.val.town/v/sammeltassen/rijks
+:::
+
+https://www.rijksmuseum.nl/en/stories/10-things/story/10-remarkable-women
+
+Here you can see where to get the URLs from the object pages.
+
+<img
+  src="https://digirati-workshops.pages.dev/rijksmuseum.png"
+  alt="Rijksmuseum"
+  className="w-1/2"
+/>
+
+### Allard Pierson image bank
+
+The Allard Pierson's image bank contains digital images of archaeological objects, paintings, prints, maps, photos and slides, as well as books and manuscripts scanned in their entirety.
+
+The pages on their website contain links to IIIF Manifests that can be browsed in the Manifest Editor Browser.
+
+https://uvaerfgoed.nl/viewer/index/
+
+![University of Amsterdam](https://digirati-workshops.pages.dev/uvaerfgoed.png)
+
+<TheseusLink
+  href="https://uvaerfgoed.nl/viewer/api/v1/records/11245_3_29718/manifest/"
+  label="Open example Manifest"
+/>
+
+### 4TU.ResearchData
+
+Available at: https://www.val.town/v/sammeltassen/iiif44tu is a proxy to make available IIIF images.
+
+IIIF Presentation API for 4TU.ResearchData.
+
+URL scheme:
+
+https://sammeltassen-iiif44tu.web.val.run/[datasetUUID]
+
+Examples:
+
+https://sammeltassen-iiif44tu.web.val.run/e3f72cb2-9432-4ae9-a353-67f22dbab590
+https://sammeltassen-iiif44tu.web.val.run/9a2b38e4-e87f-4600-8fe1-1989f4155b1d
+
+<TheseusLink
+  href="https://sammeltassen-iiif44tu.web.val.run/e3f72cb2-9432-4ae9-a353-67f22dbab590"
+  label="Open 4TU Manifest"
+/>
+
+If the dataset is private you need to create a token and include it as a query param:
+https://sammeltassen-iiif44tu.web.val.run/[datasetUUID]?token=[token]
+
+### National Archives
+
+https://www.nationaalarchief.nl/
+
+All images are IIIF but you will need something like the DetektIIIF browser extensions to get the links: https://seige.digital/en/detektiiif/
+
+Alternatively you can browse their Archive using a proxy:
+https://data.globalise.huygens.knaw.nl/manifests/maps/collection.json
+
+<TheseusLink
+  href="https://data.globalise.huygens.knaw.nl/manifests/maps/collection.json"
+  label="Open IIIF Collection"
+/>
+
+### Leiden University Libraries
+
+Navigating to their Collections overview https://digitalcollections.universiteitleiden.nl/ you can access items in that collection by theme or type, and then view an individual Collection record for example:
+
+https://digitalcollections.universiteitleiden.nl/view/item/3715610
+
+![Leiden University Libraries](https://digirati-workshops.pages.dev/leiden-manifest.jpg)
+
+IIIF Manifest URL is presented as part of a link to an advanced viewer (Mirador) in this item view, which you can use to access the Manifest, for example:
+
+https://digitalcollections.universiteitleiden.nl/iiif_manifest/item:3715610/manifest
+
+### ContentDM
+
+Use this Notebook to access the IIIF endpoint (if not visible in the interface): https://observablehq.com/@allmaps/contentdm-to-iiif
+
+Works for:
+
+- Vrije Universiteit
+- Wageningen University & Research
+- University of Groningen
+- Tresoar, Leeuwarden
+- Radboud
+
+### BnF Gallica
+
+An extensive resource - you can explore by Topic (https://gallica.bnf.fr/accueil/en/html/accueil-en) to find some content that may be of interest across a range of areas. Selecting a topic (Geography and Maps for example): https://gallica.bnf.fr/selections/fr/html/geographie-et-cartographie, you can navigate to content such as https://gallica.bnf.fr/selections/fr/html/images/photographies-de-la-societe-de-geographie-acces-geographique
+
+Selecting an object from the search results, viewing it in their viewer, you can find the IIIF Manifest link:
+
+i.e. https://gallica.bnf.fr/iiif/ark:/12148/btv1b8492135q/manifest.json
+
+### WikiData
+
+As mentioned on the IIIF Guides, Wikidata has a property for IIIF Manifests which enables queries to be created that filter and retrieve manifests if they match other Wikidata properties. You can use the examples listed here: https://iiif.io/guides/guides/www.wikidata.org/ which generate links to the manifest using the Mirador viewer.
+
+There is also an example configured for Theseus here: https://w.wiki/DaXE
+
+### Wellcome
+
+The Wellcome Collection has various IIIF endpoints available to browse through from their archives.
+
+<TheseusLink
+  href="https://iiif.wellcomecollection.org/presentation/v3/collections/archives"
+  label="Wellcome Collection"
+/>
+
+### Northwestern University Libraries
+
+The Digital collections at Northwestern University Libraries are available online as a IIIF Collection that
+you can browse through.
+
+https://api.dc.library.northwestern.edu/api/v2/collections?as=iiif
+
+<TheseusLink
+  href="https://api.dc.library.northwestern.edu/api/v2/collections?as=iiif"
+  label="Northwestern University Libraries"
+/>
+
+## IIIF Image Services
+
+From the Manifest Editor you can add IIIF-enabled images from their `info.json` manifest links. These enable deep zoom
+for the images. Some providers do not support IIIF Presentation APIs (Collections and Manifests) but do offer API endpoints for their images.
+
+![](https://digirati-workshops.pages.dev/add-image-service.jpg)
+
+### NLS collection
+
+One provider that supports IIIF Images is the National Library of Scotland Map Collection.
+
+https://maps.nls.uk/
+
+![](https://digirati-workshops.pages.dev/nls-maps.jpg)
+
+From their site, if you are looking at a single map you can click on the "Show IIIF" and grab a link to the `info.json` link to add it to your Manifest.
+
+## Static images
+
+You can also add images using images that are not IIIF-enabled. You will need an image that is allowed to be linked
+to from other pages. The format also needs to be supported by browsers, so formats such as JP2000 may not work correctly.
+
+![](https://digirati-workshops.pages.dev/image-from-url.jpg)
+
+There are a few sources where you can find some static images to include in your Manifests.
+
+### The CDLI Collection
+
+On this CDLI collection website high-resolution images are available of the tablets.
+
+https://cdli.mpiwg-berlin.mpg.de/
+
+> By making the form and content of cuneiform texts available online, the CDLI is opening pathways to the rich historical tradition of the ancient Middle East. In close collaboration with researchers, museums and an engaged public, the project seeks to unharness the extraordinary content of these earliest witnesses to our shared world heritage.
+
+An example image:
+https://cdli.mpiwg-berlin.mpg.de/dl/photo/P000001.jpg
+
+:::warning
+If you intend to publish your IIIF Manifests ensure you should ensure you have followed the attribution instructions
+and include any rights statements and required statements.
+:::
+
+### Nasa Images
+
+Generate a IIIF Collection using a search term from the NASA photo archive.
+
+<NasaProxy />
+
+:::info
+You can paste the URL of this collection into the IIIF Browser in the Manifest Editor.
+:::

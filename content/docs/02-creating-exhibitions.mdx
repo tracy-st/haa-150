@@ -1,0 +1,220 @@
+---
+title: Creating Exhibitions
+path: /creating-exhibitions
+menuLabel: Creating Exhibitions
+menuOrder: 2
+---
+
+import { DelftViewerEmbed } from "./components/DelftViewerEmbed";
+
+# Creating exhibitions
+
+To get started, navigate to the IIIF Manifest Editor:
+
+[https://manifest-editor.digirati.services/](https://manifest-editor.digirati.services/)
+
+![Landing page for Manifest Editor](https://digirati-workshops.pages.dev/open-manifest-editor.PNG)
+
+If you have not accessed the Manifest Editor recently, you will be directed to the 'Examples' tab, where you can click on and open a number of example Manifests from different institutes. These are presented as readonly previews, but you can still explore the metadata in each.
+
+The ability to import an existing manifest and then edit it within the Manifest Editor allows users to develop and enhance their existing IIIF as required. This feature also enables users to browse published IIIF Manifests and examine those - perhaps to inform how to structure aspects of the metadata, or see how specific IIIF Presentation specification features have been used by other institutions.
+
+It is a good way to learn and discover more about the possibilities the specification can afford. Before creating your own manifests, it's helpful to examine existing ones to understand how they are structured and to view some of the metadata included with them for context.
+
+You can find a selection of IIIF content to explore in [Examples of IIIF to explore](/docs/examples-of-iiif-to-explore)
+
+Once you have found a IIIF Manifest URL to open, click the 'Open manifest URL' and paste in the URL:
+
+![Landing page for Manifest Editor](https://digirati-workshops.pages.dev/getting-started-open-existing-manifest-step1.PNG)
+
+You can also use the IIIF Collection(s) URLs as a starting point to find a manifest of interest; click on the 'Browse for IIIF' option, and paste the URL of a IIIF Collection, which you can then open and browse to find a manifest.
+
+![Landing page for Manifest Editor](https://digirati-workshops.pages.dev/getting-started-open-existing-manifest-step2.PNG)
+
+Alternatively, if you have a IIIF Manifest file on your machine, use the 'Open manifest file' option to browse and find the manifest.
+
+After exploring existing manifests, you'll gain familiarity with IIIF elements and Manifest Editor features that will help when creating your own manifests.
+
+## Working with the Manifest Editor
+
+The following sections provide guidance on specific features and functionality of the Manifest Editor.
+
+### Manifest Editor layout
+
+After selecting to open an existing manifest (see [Getting started](/getting-started)), or creating a new manifest, the Manifest Editor opens in the default overview:
+
+![Viewing a NLS IIIF Manifest](https://digirati-workshops.pages.dev/manifest-editor-open-manifest-layout-overview1.PNG)
+
+The Manifest summary information is presented in the left hand panel, with the detailed metadata information in the right hand panel, together with any canvases that are present in the manifest in the central grid view.
+
+In the right hand panel, you will see any completed properties in the "Overview" tab. This makes is easy to make quick edits without going through all the available properties or searching through the tabs. The tabs are organized in the same way as the IIIF Presentation API documentation. You can click on a tab to see all the properties that are available.
+
+Some resources have a lot of properties. You can click on the "more" tab to see other tabs that are not shown by default. You can also resize either of the two sizebars to make more room for the editor by dragging the divider between the sidebar and the main panel.
+
+### Manifest vs Canvas editing
+
+As noted above, when you first open a IIIF Manifest, the editor presents the Manifest properties. You can edit and update these as needed. When you want to navigate and edit one or more canvases, you can click 'Canvases' icon in the left hand panel or select a canvas from the central grid.
+
+This navigates you to the Canvas view, presenting the list of available canvases in the left hand panel. You can access the Canvas in a list view or using grid view of thumbnails.
+
+The selected canvas is presented in the central view with deep zoom controls, with the right hand panel opening the detailed metadata for the Canvas.
+
+![Viewing an NLS Canvas](https://digirati-workshops.pages.dev/getting-started-open-existing-manifest-step4-canvas-editing.PNG)
+
+### Ordering your canvases
+
+To order, re-order or remove canvases from your IIIF Manifest, you can toggle the 'Edit Canvases' link to access the controls in both the list or grid views. Use the '=' icon to select and drag a canvas to a specific location in the list or use the options available via the 'three dots' icon.
+
+![Reordering your canvases](https://digirati-workshops.pages.dev/getting-started-open-existing-manifest-step5-canvas-editing.png)
+
+### Previewing a change
+
+When you make changes, you can preview the changes in a number of viewers that are available within the Manifest Editor including Theseus, Universal Viewer, Mirador and others.
+
+![Previewing your changes](https://digirati-workshops.pages.dev/getting-started-open-existing-manifest-step5-preview-changes.png)
+
+## Creating your own IIIF Manifests
+
+Using the 'Create new manifest' in the Manifest Editor will navigate you to an empty Manifest where you can begin to add your content.
+
+The following sections describe different types of content you can add to your manifests.
+
+### Multi-image canvas
+
+You may want to add multiple image(s) to a canvas as part of your manifest for exhibition display. This could be a collection of pages from a book or paper or a series of images.
+
+To create this, select the 'Add canvas' option in the left hand panel, and then select to add an "Empty canvas":
+
+![Adding an empty canavs](https://digirati-workshops.pages.dev/creating-canvas-for-multi-image-example.PNG)
+
+Click on the canvas in the left hand panel. Add a label to your canvas using the right hand side metadata panel.
+
+To add the first image, click the '+ Add media' option in the right hand side Canvas metadata tab:
+
+![Using Add media to select image](https://digirati-workshops.pages.dev/adding-image-step1-for-multi-image-canvas.PNG)
+
+Select the first image you wish to add, using the appropriate image option. Once you have selected the image, it will be loaded into the Canvas, using the whole canvas area as below:
+
+![Whole canvas area targetted](https://digirati-workshops.pages.dev/adding-image-step2-for-multi-image-canvas.PNG)
+
+In the right hand metadata panel for the newly added image, scroll to find the 'Target' for the selected image:
+
+![Changing the Target for the image](https://digirati-workshops.pages.dev/adding-image-step3-for-multi-image-canvas.PNG)
+
+Select the 'Change' option, to enable you to position the selected image on the canvas as required. Clicking the pencil icon, as highlighted below, will enable you to move and resize the selected image:
+
+![Using the pencil icon](https://digirati-workshops.pages.dev/adding-image-step4-for-multi-image-canvas.PNG)
+
+Once you have positioned and resized your image as desired, you can select to 'Finish editing' . You can then either click on the Canvas label in the left hand panel, or use the 'Back' arrow in the right hand panel to return to the Canvas:
+
+![Options to continue editing](https://digirati-workshops.pages.dev/adding-image-step5-for-multi-image-canvas.PNG)
+
+To add another image to the Canvas, click on the '+ Add media' option, and select the image you want to add, using the appropriate option. In the example below, an IIIF Image service image is selected for addition to the canvas:
+
+![Selecting a second image](https://digirati-workshops.pages.dev/adding-image-step6-for-multi-image-canvas.PNG)
+
+Repeating the steps above, you can use the pencil icon to enable you to resize and move the selected image as required.
+
+![Fully prepared multi-image canvas](https://digirati-workshops.pages.dev/adding-image-step7-for-multi-image-canvas.PNG)
+
+You can validate that the images have been correctly added, and positioned appropriately for your canvas by using the 'Preview' option, selecting Theseus to view your manifest.
+
+![Validating in Theseus](https://digirati-workshops.pages.dev/adding-image-step8-for-multi-image-canvas.PNG)
+
+## Exhibition building
+
+### Accessing the Exhibition editor
+
+From the Manifest Editor, when you are ready to access the Exhibition editing tools to work on the IIIF Manifest you've created, click on the 'Settings cog' in the bottom left hand menu. This opens the Workspace configuration for the Manifest Editor. Clicking the link 'Go to Exhibition Editor' will open your Manifest in the editor:
+
+![Accessing the Exhibition Viewer](https://digirati-workshops.pages.dev/accessing-exhibition-editor.png)
+
+<DelftViewerEmbed manifest="https://heritage.tudelft.nl/iiif/manifests/irrigation-knowledge/manifest.json" />
+
+### Introduction to the Exhibition editing mode
+
+The left hand panel allows interaction with the individual "slides" (aka Canvases) that make up the exhibition. These are simply the canvases which are present in the IIIF Manifest you are editing.
+
+The centre grid view presents the contents of the IIIF Manifest, whilst the right hand panel presents the Manifest metadata.
+
+![The Exhibition Editor](https://digirati-workshops.pages.dev/exhibition-editing-canvas-controls-step0.PNG)
+
+#### Editing the exhibition
+
+Clicking the Exhibition grid icon on the left navigation, opens the Exhibition grid view where you can see an outline of your exhibition.
+
+![Opening the Exhibition editing view](https://digirati-workshops.pages.dev/exhibition-editing-canvas-controls-step1.PNG)
+
+There are a number of controls:
+
+- 'Grid view' which enables you to view the exhibition as a grid, essentially providing a "Preview" of the exhibition you are creating.
+- 'List view' you can toggle the 'Grid view' to display the slides in the exhibition as a list.
+- 'Edit slides' allows you to reorganise and update the order of the "slides" (aka Canvases) within the manifest.
+- 'Add a new slide' enables you to add content as slides to your exhibition manifest.
+
+:::info
+If you want to remove a slide (canvas) from your exhibition, you currently need to do this in the standard Manifest Editor view, using the "Edit Canvases" option, in the left hand panel.
+:::
+
+When you click on a slide in the left hand panel (or via the centre grid view), the right hand panel presents additional exhibition specific metadata options for each slide.
+
+### Editing and updating your Exhibition manifest
+
+The first thing you will note is the initial "title" information box, which is preset to the current yellow background and it presents the IIIF Manifest title. This is the default setting for the Exhibition introduction.
+
+As we are working with a IIIF Manifest created in the Manifest Creation and Editing step, a number of exhibition specific settings will need to be applied. These settings will determine aspects of the layout and behaviour of the exhibition manifest when viewed in the standalone Exhibition Viewer.
+
+When you click on a canvas, the right hand side metadata panel presents the 'Exhibition' tab, which contains an option to 'Apply defaults' which allows you to quickly select some basic layout options for the canvas based on the existing content:
+
+![Apply defaults to slide](https://digirati-workshops.pages.dev/exhibition-editing-canvas-controls-step2.PNG)
+
+:::note
+These defaults may require adjustment, but they provide a useful starting point for your exhibition.
+:::
+
+Once you select this option, when you navigate to the 'Layout' tab, you'll notice what has been applied:
+
+![Default layout applied](https://digirati-workshops.pages.dev/exhibition-editing-canvas-controls-step3.PNG)
+
+#### Aspect ratio
+
+This will indicate a warning if applicable. You can use the 'Size' option to adjust the image appropriately and assess how well your changes apply to your selected content.
+
+As you alter the size, you'll see how the changes impact the exhibition layout in the left hand exhibition grid:
+
+![Adjusted size, aspect ratio](https://digirati-workshops.pages.dev/exhibition-editing-canvas-controls-step4.PNG)
+
+#### Behaviours
+
+There are a number of layout behaviours that are available which can be applied to your slides:
+
+- Text on left
+- Text on right
+- Text on bottom
+- Only image
+
+These determine how to present the slide (Canvas) Summary information presented on the 'Summary' tab in the right hand panel, when viewing the exhibition manifest in the standalone Exhibition Viewer.
+
+In the example below, 'Text on left' is selected which will result in the Label and Summary text being presented in a text component next to the image within the Exhibition Viewer. The effect of this change can be partially previewed in the Grid view in the left hand panel:
+
+![Text on left](https://digirati-workshops.pages.dev/exhibition-editing-canvas-controls-step5.PNG)
+
+#### Summary
+
+The 'Summary' tab presents the existing (Canvas) Label and Summary values if added for the current slide. This information can be presented as part of the exhibition, using the behaviour controls mentioned in the previous section.
+
+These values can be edited and updated as needed.
+
+#### Tour Steps
+
+The 'Tour steps' tab allows further configuration of the interaction provided for each individual slide, when viewed in the standalone Exhibition Viewer. These are not required to be set unless you want to have additional behaviour applied for the current slide.
+
+![Option to add tour](https://digirati-workshops.pages.dev/exhibition-editing-canvas-controls-step6.PNG)
+
+In the multi-image slide example below, you can create 'Tour steps' which guide users through your exhibition, by explicitly adding additional navigation through your content.
+
+Each of the images on the canvas have been added as a 'Tour step' so that users can be directed to each image as part of the exhibition. Tour steps can also be used for other types of annotations such as an annotation on an image region.
+
+As you add your Tour steps, you can add a label and summary for each step, which will be displayed in the standalone Exhibition Viewer.
+
+![Adding tour steps](https://digirati-workshops.pages.dev/exhibition-editing-canvas-controls-step7.PNG)
