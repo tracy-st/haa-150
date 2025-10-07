@@ -4,12 +4,11 @@ import { ExhibitionViewerLogo } from "./ExhibitionViewerLogo";
 export default function Header() {
   return (
     <>
-      <header className="p-2 flex gap-2 text-black justify-between h-16 items-center bg-white border-b shadow-sm z-50 fixed left-0 right-0">
+      <header className="p-2 flex gap-2 text-black justify-between h-16 items-center delft-bg-primary border-b shadow-sm z-50 fixed left-0 right-0">
         <div className="max-w-[1440px] m-auto w-full flex items-center justify-between px-2">
           <div className="px-2 font-bold">
             <Link to="/" className="flex items-center gap-4 text-xl">
-              <ExhibitionViewerLogo className="text-4xl" />
-              Exhibition Viewer
+              The Fogg – Then and Now
             </Link>
           </div>
           <nav className="flex flex-row items-center text-sm">
@@ -21,11 +20,10 @@ export default function Header() {
               About
             </Link>
             <Link
-              to="/docs/$docsPath"
-              params={{ docsPath: "getting-started" }}
+              to="https://sites.harvard.edu/haa150/"
               className="data-[status=active]:text-blue-700 font-semibold px-2"
             >
-              Documentation
+              Conference Website
             </Link>
           </nav>
         </div>
