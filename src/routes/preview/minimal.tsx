@@ -8,7 +8,7 @@ export const Route = createFileRoute("/preview/minimal")({
     return {
       manifest:
         search.manifest ||
-        "https://heritage.tudelft.nl/iiif/manifests/irrigation-knowledge/manifest.json",
+        "https://tracy-st.github.io/haa-150/manifest.json",
     };
   },
 
@@ -22,7 +22,7 @@ export const Route = createFileRoute("/preview/minimal")({
 
   loader: async ({ deps }) => {
     return fetch(
-      // "https://heritage.tudelft.nl/iiif/manifests/irrigation-knowledge/manifest.json",
+      // "https://tracy-st.github.io/haa-150/manifest.json",
       deps.manifest,
     ).then((r) => r.json());
   },
