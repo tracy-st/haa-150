@@ -15,7 +15,7 @@ function App() {
           The Fine Arts Library at Harvard University
         </h1>
         <p className="text-lg md:text-xl max-w-2xl mx-auto text-center px-4">
-          Since the founding of the Fogg Art Museum in 1895, the library has served the needs of teaching faculty, art museum staff, undergraduate and graduate students, researchers, and historians.
+Since the founding of the Fogg Art Museum in 1895, the library has served the needs of teaching faculty, art museum staff, undergraduate and graduate students, researchers, and historians.
 
 The history of the library is intertwined with Harvard's role in the development of academic programs in art and architectural history and museum studies.
         </p>
