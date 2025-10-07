@@ -1,5 +1,4 @@
 import { Link } from "@tanstack/react-router";
-import { ExhibitionViewerLogo } from "./ExhibitionViewerLogo";
 
 export default function Header() {
   return (
@@ -19,12 +18,14 @@ export default function Header() {
             >
               About
             </Link>
-            <Link
-              to="https://sites.harvard.edu/haa150/"
-              className="data-[status=active]:text-blue-700 font-semibold px-2"
-            >
-              Conference Website
-            </Link>
+            <a
+                href="https://sites.harvard.edu/haa150/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="data-[status=active]:text-blue-700 font-semibold px-2"
+              >
+                Conference Website
+              </a>
           </nav>
         </div>
       </header>
