@@ -1,5 +1,3 @@
-import { HomepageFeature } from "@/components/HomepageFeature";
-import { PresenetationPreview } from "@/components/PresentationPreview";
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/")({
