@@ -6,8 +6,8 @@ import { TanStackRouterVite } from '@tanstack/router-plugin/vite';
 import { resolve } from 'node:path';
 
 // https://vitejs.dev/config/
-export default defineConfig({
-   base: 'hhttps://tracy-st.github.io/haa-150/', 
+export default defineConfig(({ command }) => ({
+  base: command === 'serve' ? '/' : '/haa-150/',
   plugins: [
     TanStackRouterVite({ autoCodeSplitting: true }),
     viteReact(),
@@ -26,4 +26,4 @@ export default defineConfig({
       'contentlayer/generated': '/.contentlayer/generated',
     },
   },
-});
+}));
