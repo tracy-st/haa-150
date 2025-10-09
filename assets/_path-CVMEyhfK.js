@@ -1,1 +1,0 @@
-import{a as s,r as n,j as o}from"./index-CjTjkA8i.js";import{c as a}from"./index-1DlrJqQx.js";const c=function(){const t=s.useLoaderData(),e=n.useMemo(()=>a.getMDXComponent(t.body.code),[t]);return o.jsx("div",{className:"pt-16",children:o.jsx("div",{className:"prose prose-lg m-auto",children:o.jsx(e,{})})})};export{c as component};
