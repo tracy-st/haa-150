@@ -7,7 +7,7 @@ import { resolve } from 'node:path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-   base: '/haa-150/', 
+   base: 'hhttps://tracy-st.github.io/haa-150/', 
   plugins: [
     TanStackRouterVite({ autoCodeSplitting: true }),
     viteReact(),
