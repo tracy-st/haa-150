@@ -1,6 +1,6 @@
 {
   "name": "haa-150",
-  "homepage": "https://trcy-st>.github.io/haa-150/",
+  "homepage": "https://tracy-st.github.io/haa-150",
   "private": true,
   "type": "module",
   "scripts": {
@@ -13,6 +13,7 @@
     "lint": "biome lint",
     "build-content": "contentlayer2 build",
     "check": "biome check",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
   "resolutions": {
