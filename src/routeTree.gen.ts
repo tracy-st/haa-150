@@ -8,158 +8,62 @@
 // You should NOT make any changes in this file as it will be overwritten.
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
-// Import Routes
+import { Route as rootRouteImport } from './routes/__root'
+import { Route as ExamplesRouteImport } from './routes/examples'
+import { Route as DocsRouteImport } from './routes/docs'
+import { Route as PathRouteImport } from './routes/$path'
+import { Route as IndexRouteImport } from './routes/index'
+import { Route as DocsIndexRouteImport } from './routes/docs/index'
+import { Route as PreviewPresentationRouteImport } from './routes/preview/presentation'
+import { Route as PreviewMinimalRouteImport } from './routes/preview/minimal'
+import { Route as PreviewDelftRouteImport } from './routes/preview/delft'
+import { Route as DocsDocsPathRouteImport } from './routes/docs/$docsPath'
 
-import { Route as rootRoute } from './routes/__root'
-import { Route as ExamplesImport } from './routes/examples'
-import { Route as DocsImport } from './routes/docs'
-import { Route as PathImport } from './routes/$path'
-import { Route as IndexImport } from './routes/index'
-import { Route as DocsIndexImport } from './routes/docs/index'
-import { Route as PreviewPresentationImport } from './routes/preview/presentation'
-import { Route as PreviewMinimalImport } from './routes/preview/minimal'
-import { Route as PreviewDelftImport } from './routes/preview/delft'
-import { Route as DocsDocsPathImport } from './routes/docs/$docsPath'
-
-// Create/Update Routes
-
-const ExamplesRoute = ExamplesImport.update({
+const ExamplesRoute = ExamplesRouteImport.update({
   id: '/examples',
   path: '/examples',
-  getParentRoute: () => rootRoute,
+  getParentRoute: () => rootRouteImport,
 } as any)
-
-const DocsRoute = DocsImport.update({
+const DocsRoute = DocsRouteImport.update({
   id: '/docs',
   path: '/docs',
-  getParentRoute: () => rootRoute,
+  getParentRoute: () => rootRouteImport,
 } as any)
-
-const PathRoute = PathImport.update({
+const PathRoute = PathRouteImport.update({
   id: '/$path',
   path: '/$path',
-  getParentRoute: () => rootRoute,
+  getParentRoute: () => rootRouteImport,
 } as any)
-
-const IndexRoute = IndexImport.update({
+const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => rootRoute,
+  getParentRoute: () => rootRouteImport,
 } as any)
-
-const DocsIndexRoute = DocsIndexImport.update({
+const DocsIndexRoute = DocsIndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => DocsRoute,
 } as any)
-
-const PreviewPresentationRoute = PreviewPresentationImport.update({
+const PreviewPresentationRoute = PreviewPresentationRouteImport.update({
   id: '/preview/presentation',
   path: '/preview/presentation',
-  getParentRoute: () => rootRoute,
+  getParentRoute: () => rootRouteImport,
 } as any)
-
-const PreviewMinimalRoute = PreviewMinimalImport.update({
+const PreviewMinimalRoute = PreviewMinimalRouteImport.update({
   id: '/preview/minimal',
   path: '/preview/minimal',
-  getParentRoute: () => rootRoute,
+  getParentRoute: () => rootRouteImport,
 } as any)
-
-const PreviewDelftRoute = PreviewDelftImport.update({
+const PreviewDelftRoute = PreviewDelftRouteImport.update({
   id: '/preview/delft',
   path: '/preview/delft',
-  getParentRoute: () => rootRoute,
+  getParentRoute: () => rootRouteImport,
 } as any)
-
-const DocsDocsPathRoute = DocsDocsPathImport.update({
+const DocsDocsPathRoute = DocsDocsPathRouteImport.update({
   id: '/$docsPath',
   path: '/$docsPath',
   getParentRoute: () => DocsRoute,
 } as any)
-
-// Populate the FileRoutesByPath interface
-
-declare module '@tanstack/react-router' {
-  interface FileRoutesByPath {
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexImport
-      parentRoute: typeof rootRoute
-    }
-    '/$path': {
-      id: '/$path'
-      path: '/$path'
-      fullPath: '/$path'
-      preLoaderRoute: typeof PathImport
-      parentRoute: typeof rootRoute
-    }
-    '/docs': {
-      id: '/docs'
-      path: '/docs'
-      fullPath: '/docs'
-      preLoaderRoute: typeof DocsImport
-      parentRoute: typeof rootRoute
-    }
-    '/examples': {
-      id: '/examples'
-      path: '/examples'
-      fullPath: '/examples'
-      preLoaderRoute: typeof ExamplesImport
-      parentRoute: typeof rootRoute
-    }
-    '/docs/$docsPath': {
-      id: '/docs/$docsPath'
-      path: '/$docsPath'
-      fullPath: '/docs/$docsPath'
-      preLoaderRoute: typeof DocsDocsPathImport
-      parentRoute: typeof DocsImport
-    }
-    '/preview/delft': {
-      id: '/preview/delft'
-      path: '/preview/delft'
-      fullPath: '/preview/delft'
-      preLoaderRoute: typeof PreviewDelftImport
-      parentRoute: typeof rootRoute
-    }
-    '/preview/minimal': {
-      id: '/preview/minimal'
-      path: '/preview/minimal'
-      fullPath: '/preview/minimal'
-      preLoaderRoute: typeof PreviewMinimalImport
-      parentRoute: typeof rootRoute
-    }
-    '/preview/presentation': {
-      id: '/preview/presentation'
-      path: '/preview/presentation'
-      fullPath: '/preview/presentation'
-      preLoaderRoute: typeof PreviewPresentationImport
-      parentRoute: typeof rootRoute
-    }
-    '/docs/': {
-      id: '/docs/'
-      path: '/'
-      fullPath: '/docs/'
-      preLoaderRoute: typeof DocsIndexImport
-      parentRoute: typeof DocsImport
-    }
-  }
-}
-
-// Create and export the route tree
-
-interface DocsRouteChildren {
-  DocsDocsPathRoute: typeof DocsDocsPathRoute
-  DocsIndexRoute: typeof DocsIndexRoute
-}
-
-const DocsRouteChildren: DocsRouteChildren = {
-  DocsDocsPathRoute: DocsDocsPathRoute,
-  DocsIndexRoute: DocsIndexRoute,
-}
-
-const DocsRouteWithChildren = DocsRoute._addFileChildren(DocsRouteChildren)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -172,7 +76,6 @@ export interface FileRoutesByFullPath {
   '/preview/presentation': typeof PreviewPresentationRoute
   '/docs/': typeof DocsIndexRoute
 }
-
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/$path': typeof PathRoute
@@ -183,9 +86,8 @@ export interface FileRoutesByTo {
   '/preview/presentation': typeof PreviewPresentationRoute
   '/docs': typeof DocsIndexRoute
 }
-
 export interface FileRoutesById {
-  __root__: typeof rootRoute
+  __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/$path': typeof PathRoute
   '/docs': typeof DocsRouteWithChildren
@@ -196,7 +98,6 @@ export interface FileRoutesById {
   '/preview/presentation': typeof PreviewPresentationRoute
   '/docs/': typeof DocsIndexRoute
 }
-
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
@@ -232,7 +133,6 @@ export interface FileRouteTypes {
     | '/docs/'
   fileRoutesById: FileRoutesById
 }
-
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   PathRoute: typeof PathRoute
@@ -243,6 +143,86 @@ export interface RootRouteChildren {
   PreviewPresentationRoute: typeof PreviewPresentationRoute
 }
 
+declare module '@tanstack/react-router' {
+  interface FileRoutesByPath {
+    '/examples': {
+      id: '/examples'
+      path: '/examples'
+      fullPath: '/examples'
+      preLoaderRoute: typeof ExamplesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/docs': {
+      id: '/docs'
+      path: '/docs'
+      fullPath: '/docs'
+      preLoaderRoute: typeof DocsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/$path': {
+      id: '/$path'
+      path: '/$path'
+      fullPath: '/$path'
+      preLoaderRoute: typeof PathRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/docs/': {
+      id: '/docs/'
+      path: '/'
+      fullPath: '/docs/'
+      preLoaderRoute: typeof DocsIndexRouteImport
+      parentRoute: typeof DocsRoute
+    }
+    '/preview/presentation': {
+      id: '/preview/presentation'
+      path: '/preview/presentation'
+      fullPath: '/preview/presentation'
+      preLoaderRoute: typeof PreviewPresentationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/preview/minimal': {
+      id: '/preview/minimal'
+      path: '/preview/minimal'
+      fullPath: '/preview/minimal'
+      preLoaderRoute: typeof PreviewMinimalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/preview/delft': {
+      id: '/preview/delft'
+      path: '/preview/delft'
+      fullPath: '/preview/delft'
+      preLoaderRoute: typeof PreviewDelftRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/docs/$docsPath': {
+      id: '/docs/$docsPath'
+      path: '/$docsPath'
+      fullPath: '/docs/$docsPath'
+      preLoaderRoute: typeof DocsDocsPathRouteImport
+      parentRoute: typeof DocsRoute
+    }
+  }
+}
+
+interface DocsRouteChildren {
+  DocsDocsPathRoute: typeof DocsDocsPathRoute
+  DocsIndexRoute: typeof DocsIndexRoute
+}
+
+const DocsRouteChildren: DocsRouteChildren = {
+  DocsDocsPathRoute: DocsDocsPathRoute,
+  DocsIndexRoute: DocsIndexRoute,
+}
+
+const DocsRouteWithChildren = DocsRoute._addFileChildren(DocsRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   PathRoute: PathRoute,
@@ -252,59 +232,6 @@ const rootRouteChildren: RootRouteChildren = {
   PreviewMinimalRoute: PreviewMinimalRoute,
   PreviewPresentationRoute: PreviewPresentationRoute,
 }
-
-export const routeTree = rootRoute
+export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-/* ROUTE_MANIFEST_START
-{
-  "routes": {
-    "__root__": {
-      "filePath": "__root.tsx",
-      "children": [
-        "/",
-        "/$path",
-        "/docs",
-        "/examples",
-        "/preview/delft",
-        "/preview/minimal",
-        "/preview/presentation"
-      ]
-    },
-    "/": {
-      "filePath": "index.tsx"
-    },
-    "/$path": {
-      "filePath": "$path.tsx"
-    },
-    "/docs": {
-      "filePath": "docs.tsx",
-      "children": [
-        "/docs/$docsPath",
-        "/docs/"
-      ]
-    },
-    "/examples": {
-      "filePath": "examples.tsx"
-    },
-    "/docs/$docsPath": {
-      "filePath": "docs/$docsPath.tsx",
-      "parent": "/docs"
-    },
-    "/preview/delft": {
-      "filePath": "preview/delft.tsx"
-    },
-    "/preview/minimal": {
-      "filePath": "preview/minimal.tsx"
-    },
-    "/preview/presentation": {
-      "filePath": "preview/presentation.tsx"
-    },
-    "/docs/": {
-      "filePath": "docs/index.tsx",
-      "parent": "/docs"
-    }
-  }
-}
-ROUTE_MANIFEST_END */
