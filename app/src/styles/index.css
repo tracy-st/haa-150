@@ -1,3 +1,5 @@
+@reference "tailwindcss";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -12,7 +14,8 @@ html {
 
 html,
 body {
-  @apply bg-BackgroundPrimary text-TextSecondary;
+  /* Use CSS variables via Tailwind arbitrary values */
+  @apply bg-[var(--delft-bg-primary)] text-[var(--delft-text-secondary)];
 }
 
 :root {
@@ -49,6 +52,14 @@ body {
   /* Viewer elements */
   --delft-viewer-background: #373737;
   --delft-title-transform: uppercase;
+}
+
+/* Expose CSS variables as Tailwind color tokens */
+@theme {
+  --color-BackgroundPrimary: var(--delft-bg-primary);
+  --color-BackgroundSecondary: var(--delft-bg-secondary);
+  --color-TextPrimary: var(--delft-text-primary);
+  --color-TextSecondary: var(--delft-text-secondary);
 }
 
 .delft-title {

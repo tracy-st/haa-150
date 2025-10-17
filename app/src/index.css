@@ -1,9 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
-/* Import viewer styles first for PostCSS */
-@import 'styles/index.css';
-@import 'styles/lib.css';
+@import "tailwindcss";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Import viewer styles after Tailwind so @apply utilities are available */
+@import './styles/index.css';
+@import './styles/lib.css';
