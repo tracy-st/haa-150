@@ -71,3 +71,12 @@ body {
   max-height: 300px;
   object-fit: contain;
 }
+
+/* Safelist utilities used by IIIF `behavior` tokens in JSON so Tailwind generates them */
+.tw-safelist {
+  @apply w-12 h-1 h-7 h-9 h-12;
+}
+
+/* The manifest uses semantic classes `left` and `right`; define them explicitly */
+.left { float: left; }
+.right { float: right; }

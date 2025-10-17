@@ -1,5 +1,6 @@
 @reference "tailwindcss";
 
+/*
 *[data-cut-corners-enabled="true"] .cut-corners {
   -webkit-clip-path: polygon(
     1rem 0,
@@ -33,7 +34,7 @@
   width: 23px;
   height: 20px;
 }
-
+*/
 /* Exhibition editorial */
 
 .exhibition-info-block h2 {
