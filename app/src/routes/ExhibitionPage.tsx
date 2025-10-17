@@ -25,7 +25,7 @@ function ExhibitionPage() {
   };
 
   useEffect(() => {
-    fetch("https://heritage.tudelft.nl/iiif/stores/manifest-editor/collection.json")
+    fetch("/collection.json")
       .then((r) => r.json())
       .then((col) => {
         setCollection(col);
