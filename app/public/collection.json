@@ -49,6 +49,47 @@
           ]
         }
       ]
+    },
+       {
+      "id": "https://leedsunilibrary.exhibitionviewer.org/iiif/marie-hartley.json",
+      "type": "Manifest",
+      "label": {
+        "en": [
+          "Hartley"
+        ]
+      },
+      "hss:slug": "manifests/hartley",
+      "thumbnail": [
+        {
+          "id": "https://dlc.services/thumbs/7/37/e7154d7e15c435b7341bce58bc42b9ad/full/133,200/0/default.jpg",
+          "type": "Image",
+          "service": [
+            {
+              "@id": "https://dlc.services/thumbs/7/37/e7154d7e15c435b7341bce58bc42b9ad",
+              "@type": "ImageService2",
+              "profile": "http://iiif.io/api/image/2/level0.json",
+              "sizes": [
+                {
+                  "width": 683,
+                  "height": 1024
+                },
+                {
+                  "width": 267,
+                  "height": 400
+                },
+                {
+                  "width": 133,
+                  "height": 200
+                },
+                {
+                  "width": 67,
+                  "height": 100
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ]
 }
