@@ -8,3 +8,5 @@ declare namespace JSX {
     };
   }
 }
+
+declare module '*.css';

@@ -1,3 +1,5 @@
+@reference "tailwindcss";
+
 *[data-cut-corners-enabled="true"] .cut-corners {
   -webkit-clip-path: polygon(
     1rem 0,
