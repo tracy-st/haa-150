@@ -2,6 +2,10 @@
 
 @import "tailwindcss";
 
+/* Base styles from the exhibition-viewer package */
+@import 'exhibition-viewer/dist/index.css';
+
 /* Import viewer styles after Tailwind so @apply utilities are available */
 @import './styles/index.css';
 @import './styles/lib.css';
+@import './styles/presentation.css';
