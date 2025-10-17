@@ -8,19 +8,25 @@ import Home from './routes/Home.tsx'
 import ExhibitionPage from './routes/ExhibitionPage.tsx'
 // import PresentationPage from './routes/PresentationPage.tsx'
 
-const router = createBrowserRouter([
-	{
-		path: '/',
-		element: <App />,
-		children: [
-			{ index: true, element: <Home /> },
-			{ path: 'exhibition', element: <ExhibitionPage /> },
-		],
-	},
-])
+const router = createBrowserRouter(
+    [
+        {
+            path: '/',
+            element: <App />,
+            children: [
+                { index: true, element: <Home /> },
+                { path: 'exhibition', element: <ExhibitionPage /> },
+            ],
+        },
+    ],
+    {
+        // Ensure routing works when served from a subpath (GitHub Pages repo site)
+        basename: import.meta.env.BASE_URL,
+    },
+)
 
 createRoot(document.getElementById('root')!).render(
-	<StrictMode>
-		<RouterProvider router={router} />
-	</StrictMode>,
+    <StrictMode>
+        <RouterProvider router={router} />
+    </StrictMode>,
 )
