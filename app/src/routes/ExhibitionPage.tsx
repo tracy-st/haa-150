@@ -16,11 +16,11 @@ function ExhibitionPage() {
   const isPresentation = search.get("type") === "presentation";
   const isEmbed = search.get("embed") === "true";
   const manifestId = search.get("manifest");
-  const cutCorners = search.get("cut-corners");
+  // const cutCorners = search.get("cut-corners");
   const fullTitleBar = search.get("full-title-bar");
 
   const options = {
-    cutCorners: !(cutCorners === "false"),
+    // cutCorners: !(cutCorners === "false"),
     fullTitleBar: !(fullTitleBar === "false"),
   };
 
