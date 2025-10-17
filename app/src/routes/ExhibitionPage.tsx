@@ -25,7 +25,7 @@ function ExhibitionPage() {
   };
 
   useEffect(() => {
-    fetch("/collection.json")
+    fetch(`${import.meta.env.BASE_URL}collection.json`)
       .then((r) => r.json())
       .then((col) => {
         setCollection(col);
@@ -71,7 +71,7 @@ function ExhibitionPage() {
         {isPresentation ? (
           <div className="h-[800px]">
             {isEmbed ? (
-              <iframe src={`/embed.html?manifest=${manifestId}`} className="h-full w-full" title="Presentation" />
+              <iframe src={`${import.meta.env.BASE_URL}embed.html?manifest=${manifestId}`} className="h-full w-full" title="Presentation" />
             ) : (
               <DelftPresentation manifest={manifest} options={options} language="en" viewObjectLinks={[]} />
             )}
